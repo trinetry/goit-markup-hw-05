@@ -8,6 +8,8 @@
   --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   --card-set-gap: 30px;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: 250ms;
 }
 
 h1,
@@ -113,6 +115,7 @@ body {
   color: var(--primary-text-color);
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color var(--timing-function) var(--transition-timing-function);
 }
 
 .logo:hover,
@@ -121,6 +124,7 @@ body {
 }
 
 .nav-elements {
+  position: relative;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -129,6 +133,7 @@ body {
   text-decoration: none;
   padding-bottom: 32px;
   padding-top: 32px;
+  transition: color var(--timing-function) var(--transition-timing-function);
 }
 
 .nav-item:not(:last-child) {
@@ -158,6 +163,8 @@ body {
   text-decoration: none;
   padding-bottom: 32px;
   padding-top: 32px;
+  transition: color var(--timing-function) var(--transition-timing-function),
+    fill var(--timing-function) var(--transition-timing-function);
 }
 
 .contact-header:hover,
@@ -170,6 +177,13 @@ body {
 
 .current::after {
   content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
 }
 
 /*Hero*/
@@ -214,6 +228,8 @@ body {
   line-height: 1.8;
   color: inherit;
   background-color: var(--accent-color);
+  transition: background-color var(--timing-function)
+    var(--transition-timing-function);
 }
 
 .hero-button:hover,
@@ -289,6 +305,31 @@ body {
   text-align: center;
 }
 
+/* Thumb activity */
+
+.activity-thumb {
+  position: relative;
+  display: flex;
+}
+
+.activity-title {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 27px;
+  padding-top: 27px;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 0;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  font-size: 14px;
+}
+
 /*Our command*/
 
 .command-section {
@@ -356,6 +397,9 @@ body {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
+  transition: background-color var(--timing-function)
+      var(--transition-timing-function),
+    color var(--timing-function) var(--transition-timing-function);
 }
 
 .social-link:hover,
@@ -385,6 +429,8 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+  transition: color var(--timing-function) var(--transition-timing-function),
+    border-color var(--timing-function) var(--transition-timing-function);
 }
 
 .clients-list-icon {
@@ -430,6 +476,8 @@ body {
   line-height: 2;
   color: var(--primary-white-color);
   text-decoration: none;
+  margin-bottom: 9px;
+  transition: color var(--timing-function) var(--transition-timing-function);
 }
 
 .adress-item:not(:last-child) {
@@ -440,9 +488,6 @@ body {
 .adress:focus {
   color: var(--accent-color);
 }
-.adress {
-  margin-bottom: 9px;
-}
 
 .contact-footer {
   margin-top: 10px;
@@ -450,6 +495,7 @@ body {
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition: color var(--timing-function) var(--transition-timing-function);
 }
 
 .contact-footer:hover,
@@ -480,6 +526,8 @@ body {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--timing-function)
+    var(--transition-timing-function);
 }
 
 .social-footer-link:hover,
@@ -520,6 +568,14 @@ body {
   border-color: transparent;
   border-radius: 4px;
   padding: 6px 22px;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: inherit;
+  transition: color var(--timing-function) var(--transition-timing-function),
+    background-color var(--timing-function) var(--transition-timing-function);
 }
 
 .project-button:hover,
@@ -551,15 +607,6 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.project-button {
-  font-family: inherit;
-  font-style: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: inherit;
-}
-
 .project-name {
   font-weight: 700;
   font-size: 18px;
@@ -581,55 +628,33 @@ body {
 
 /* Thumb footer */
 
-.thumb-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  line-height: 1.5;
-  padding: 63px 24px;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-white-color);
-  opacity: 0;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-}
-
 .projects-thumb {
   position: relative;
-  display: flex;
+  overflow: hidden;
 }
 
-.thumb-text:hover,
-.thumb-text:focus {
-  opacity: 1;
-  background-color: var(--accent-color);
-}
-
-/* Thumb activity */
-
-.activity-thumb {
-  position: relative;
-  display: flex;
-}
-
-.activity-title {
+.thumb-text {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 70px;
-  text-align: center;
-  justify-content: center;
-  padding-top: 27px;
-  padding-top: 27px;
-  background: rgba(47, 48, 58, 0.8);
-  bottom: 0;
-  font-weight: 700;
-  line-height: 1.14;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
+  line-height: 1.5;
   color: var(--primary-white-color);
-  font-size: 14px;
+  overflow: auto;
+
+  transform: translateY(100%);
+  transition: background-color var(--timing-function)
+    var(--transition-timing-function);
+  /*   
+  align-items: center;
+  justify-content: center;
+   */
+}
+
+.thumb-text:hover .projects-link:hover .thumb-text:focus .projects-link:focus {
+  transform: translateY(0);
 }
