@@ -154,7 +154,7 @@ body {
 
 .nav-elements:hover,
 .nav-elements:focus {
-  color: #afb1b8;
+  color: var(--accent-color);
 }
 
 .contact-icon {
@@ -656,4 +656,51 @@ body {
 .our-projects-item:hover .thumb-text,
 .our-projects-item:focus .thumb-text {
   transform: translateY(0);
+}
+
+/* Backdrop */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: var(--timing) var(--transition-function);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 581px;
+  width: 528px;
+  background-color: var(--primary-white-color);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
+
+.close-icon {
+  width: 11px;
+  height: 11px;
+}
+
+.close-button {
+  top: 7px;
+  right: 8px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
