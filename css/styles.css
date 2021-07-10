@@ -179,7 +179,11 @@ body {
 /* Header after */
 
 .current::after {
+<<<<<<< HEAD
   content: '' ;
+=======
+  content: '';
+>>>>>>> parent of 0dc8d55 (changes)
 }
 
 >>>>>>> parent of 0dc8d55 (changes)
@@ -372,10 +376,13 @@ body {
   color: var(--paragraph-text-color);
 =======
   color: #afb1b8;
+<<<<<<< HEAD
 >>>>>>> parent of 0dc8d55 (changes)
 =======
   color: var(--paragraph-text-color);
 >>>>>>> parent of c4416c6 (changes)
+=======
+>>>>>>> parent of 0dc8d55 (changes)
 }
 
 .social-link:hover,
@@ -404,7 +411,11 @@ body {
   padding: 16px 32px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+<<<<<<< HEAD
   color: var(--paragraph-text-color);
+=======
+  color: #afb1b8;
+>>>>>>> parent of 0dc8d55 (changes)
 }
 
 .clients-list-icon {
@@ -623,6 +634,7 @@ body {
 .projects-thumb {
   position: relative;
   display: flex;
+<<<<<<< HEAD
 }
 
 .thumb-text:hover,
@@ -635,6 +647,20 @@ body {
 
  .activity-thumb {
   position:relative;
+=======
+}
+
+.thumb-text:hover,
+.thumb-text:focus {
+  opacity: 1;
+  background-color: var(--accent-color);
+}
+
+/* Thumb activity */
+
+.activity-thumb {
+  position: relative;
+>>>>>>> parent of 0dc8d55 (changes)
   display: flex;
 }
 
@@ -655,6 +681,9 @@ body {
   color: var(--primary-white-color);
   font-size: 14px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 0dc8d55 (changes)
 }
 >>>>>>> parent of 0dc8d55 (changes)
 =======
