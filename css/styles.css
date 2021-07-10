@@ -653,8 +653,8 @@ body {
   transition: transform var(--timing) var(--transition-function);
 }
 
-.our-projects-item:hover .thumb-text,
-.our-projects-item:focus .thumb-text {
+.projects-link:hover .thumb-text,
+.projects-link:focus .thumb-text {
   transform: translateY(0);
 }
 
