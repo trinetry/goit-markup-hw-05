@@ -311,13 +311,12 @@ body {
 }
 
 .activity-title {
+  display: flex;
   position: absolute;
   width: 100%;
   height: 70px;
   text-align: center;
   justify-content: center;
-  padding-top: 27px;
-  padding-top: 27px;
   background: rgba(47, 48, 58, 0.8);
   bottom: 0;
   font-weight: 700;
@@ -375,7 +374,6 @@ body {
   justify-content: space-between;
   padding-left: 32px;
   padding-right: 32px;
-  color: #afb1b8;
 }
 
 .social-item:not(:last-child) {
@@ -395,7 +393,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: var(--paragraph-text-color);
+  color: #afb1b8;
   transition: color var(--timing) var(--transition-function),
     background-color var(--timing) var(--transition-function);
 }
@@ -544,8 +542,6 @@ body {
 
 .social-footer {
   margin-left: 70px;
-  padding-top: 70px;
-  padding-bottom: 100px;
 }
 
 .social-footer-icon {
