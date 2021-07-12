@@ -446,11 +446,6 @@ body {
 }
 
 .footer-container {
-  display: flex;
-  align-items: baseline;
-}
-
-.footer-container {
   padding-bottom: 60px;
   padding-top: 60px;
 }
@@ -503,7 +498,7 @@ body {
 
 /* Footer icons */
 
-.footer-list {
+.footer-container {
   display: flex;
 }
 
