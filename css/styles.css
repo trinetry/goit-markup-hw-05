@@ -315,7 +315,7 @@ body {
   position: absolute;
   width: 100%;
   height: 70px;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   background: rgba(47, 48, 58, 0.8);
   bottom: 0;
@@ -443,11 +443,13 @@ body {
 
 .footer {
   background-color: var(--font-color);
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .footer-container {
-  padding-bottom: 60px;
-  padding-top: 60px;
+  display: flex;
+  align-items: baseline;
 }
 
 .logo-footer {
@@ -497,10 +499,6 @@ body {
 }
 
 /* Footer icons */
-
-.footer-container {
-  display: flex;
-}
 
 .invitation {
   color: var(--primary-white-color);
